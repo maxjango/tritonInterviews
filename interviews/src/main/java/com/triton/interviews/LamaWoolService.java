@@ -8,7 +8,7 @@ public class LamaWoolService {
 	public boolean isWoolTooOldToSell(DateTime shearDate) {
 		// Joda mutable DateTime instance initialized to the current system date/time		
 		MutableDateTime now = shearDate.toMutableDateTime();
-		now.setDate(shearDate); 
+		now.setDate(shearDate);
 		
 		//MutableDateTime now = new MutableDateTime();
 		
