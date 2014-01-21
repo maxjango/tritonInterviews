@@ -3,8 +3,12 @@ package com.triton.interviews;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.TreeMap;
+
+import javax.naming.BinaryRefAddr;
 
 
 public class Solution {
@@ -13,7 +17,7 @@ public class Solution {
         // write your code in Java SE 6
 		
 		//first we have to sort the arrays
-		Arrays.sort(A);
+		//Arrays.sort(A);
 		//Transform Arrays in a list
 		//convert list int into Integer
 		
@@ -23,13 +27,16 @@ public class Solution {
 		    	myList.add( A[index]);
 		    }
 		  
-		TreeMap<Integer,Integer> occurences = new TreeMap<Integer,Integer>();
+		Map<Integer,Integer> occurences = new HashMap<Integer,Integer>();
 		for (Integer i :myList){
 			int ocur=Collections.frequency(myList,i);
-			if(ocur==1) occurences.put(i,ocur);
+			if(ocur==1) {
+				int position=myList.indexOf(i);
+				occurences.put(i,position);
+			}
 		}
 		    
-		if(occurences.size()!=0)return occurences.firstKey();
+		if(occurences.size()!=0)return A[Collections.min(occurences.values())];
 		else return -1;
     }
 

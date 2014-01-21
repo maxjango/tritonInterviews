@@ -20,7 +20,7 @@ public class SolutionTest {
 	@Test
 	public void solutio_AllOk() throws Exception {
 	
-	assertEquals(2,service.solution(a));
+	assertEquals(4,service.solution(a));
 	}
 
 }
